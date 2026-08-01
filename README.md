@@ -13,7 +13,7 @@ This project is a real-time system that tracks cryptocurrency markets and drives
 ## Results
 
 
-- **Throughput:** ~18x mean / ~68x peak vs a NumPy baseline for 17x17 ATA matrices (including AXI DMA transfer between the PS and PL - which was a critical path).
+- **End-to-End Latency:** ~18x mean / ~68x peak vs a NumPy baseline for 17x17 ATA matrices (including AXI DMA transfer between the PS and PL - which was a critical path).
 - **Accuracy:** mean quantisation error of 1.25%. Deemed negligible due to the high number of samples
 
 ## Repository layout
