@@ -1,43 +1,23 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 19.03.2026 12:59:28
-// Design Name: 
-// Module Name: result_store
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
-
+// Simple dual-clock result memory: write-only port A and read-only port B.
 module result_store #(
     parameter int DATA_WIDTH = 64,
     parameter int ADDR_WIDTH = 8
-)(
-    input  logic                   clka,
-    input  logic                   ena,
-    input  logic                   wea,
-    input  logic [ADDR_WIDTH-1:0]  addra,
-    input  logic [DATA_WIDTH-1:0]  dina,
+) (
+    input  logic                  clka,
+    input  logic                  ena,
+    input  logic                  wea,
+    input  logic [ADDR_WIDTH-1:0] addra,
+    input  logic [DATA_WIDTH-1:0] dina,
 
-    // bram controller
-    input  logic                   clkb,
-    input  logic                   enb,
-    input  logic [ADDR_WIDTH-1:0]  addrb,
-    output logic [DATA_WIDTH-1:0]  doutb
+    // BRAM-controller read port.
+    input  logic                  clkb,
+    input  logic                  enb,
+    input  logic [ADDR_WIDTH-1:0] addrb,
+    output logic [DATA_WIDTH-1:0] doutb
 );
 
-    // ram array??
     (* ram_style = "block" *) logic [DATA_WIDTH-1:0] ram [0:(2**ADDR_WIDTH)-1];
 
     initial begin
@@ -46,7 +26,7 @@ module result_store #(
         end
     end
 
-    // write only port
+    // Write-only port A.
     always_ff @(posedge clka) begin
         if (ena) begin
             if (wea) begin
@@ -55,7 +35,7 @@ module result_store #(
         end
     end
 
-    //read only port
+    // Read-only port B.
     always_ff @(posedge clkb) begin
         if (enb) begin
             doutb <= ram[addrb];
@@ -63,4 +43,3 @@ module result_store #(
     end
 
 endmodule
-

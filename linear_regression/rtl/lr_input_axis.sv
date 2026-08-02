@@ -1,29 +1,10 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 19.03.2026 12:58:11
-// Design Name: 
-// Module Name: lr_input_axis
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
-
+// One-entry AXI4-Stream input buffer and accepted-sample counter.
 module lr_input_axis #(
     parameter int DATA_WIDTH  = 256,
     parameter int COUNT_WIDTH = 32
-)(
+) (
     input  logic                   clk,
     input  logic                   rst,
 
@@ -104,9 +85,9 @@ module lr_input_axis #(
                 end
 
                 if (take_input) begin
-                    buffer_data  <= s_axis_tdata;
-                    buffer_valid <= 1'b1;
-                    buffer_last  <= taking_last_input;
+                    buffer_data     <= s_axis_tdata;
+                    buffer_valid    <= 1'b1;
+                    buffer_last     <= taking_last_input;
                     accepted_counts <= accepted_counts + 1'b1;
 
                     if (taking_last_input) begin
