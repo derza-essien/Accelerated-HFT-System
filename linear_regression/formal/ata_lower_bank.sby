@@ -1,17 +1,25 @@
+[tasks]
+prove
+cover
+
 [options]
-mode prove
-depth 10
+prove: mode prove
+prove: depth 10
+
+cover: mode cover
+cover: depth 10
 
 [engines]
 smtbmc boolector
 
 [script]
-read -formal -sv -I. ata_lower_bank.sv
+plugin -i slang
 
-# The production design has 17 parameters and 153 MAC lanes. A reduced
-# three-parameter instance keeps the arithmetic proof tractable while still
-# exercising diagonal and off-diagonal lower-triangle mappings.
-chparam -set NUM_PARAMS 3 -set NUM_ACC 6 -set ACC_WIDTH 64 ata_lower_bank
+read_slang ata_lower_bank.sv \
+    --top ata_lower_bank \
+    -D FORMAL \
+    -G NUM_PARAMS=3
+
 prep -top ata_lower_bank
 
 [files]
