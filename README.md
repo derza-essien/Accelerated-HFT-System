@@ -2,8 +2,6 @@
 
 This project is a real-time system that tracks cryptocurrency markets and drives trading decisions from an **online linear-regression model updated on an FPGA**. The regression's core matrix arithmetic is offloaded to a fixed-point RTL datapath on a PYNQ-Z1 board, with the host managing market data and control from the processing system.
 
-> **Fork / attribution:** this repository is a fork of a group project ([`Information-Processing/trading_indicators`](https://github.com/Information-Processing/trading_indicators)). The commit history is largely inherited from upstream. **My contribution is the hardware side: the SystemVerilog RTL for the fixed-point matrix multiplier used by the linear-regression model.** The rest of the system (data loading, controller logic, Python tooling) is team-authored. I have forked this repository for cleanup, future updates to my side of the project, and for a front-end README for recruiting purposes.
-
 ## What was built
 
 - **Fixed-point matrix-multiply datapath (my work)** — an outer-product accumulation pipeline that computes the matrix products behind the linear-regression update. Designed with an initiation interval of 1 (one accumulation issued per cycle) at an Fmax of ~100 MHz on the Zynq-7020.
