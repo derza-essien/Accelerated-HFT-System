@@ -1,8 +1,8 @@
 import numpy as np
 import time
-from hardware_lr import HardwareLR 
-from software_optimised_liner_regression import OptimisedSoftwareLR
-from unoptimised_lr import UnoptimisedSoftwareLR
+from linear_regression.py.hardware_lr import HardwareLR 
+from linear_regression.py.software_optimised_liner_regression import OptimisedSoftwareLR
+from linear_regression.py.unoptimised_lr import UnoptimisedSoftwareLR
 
 # example input:
 # [[1,2,3,4,5],
