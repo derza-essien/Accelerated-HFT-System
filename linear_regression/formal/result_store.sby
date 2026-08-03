@@ -1,0 +1,14 @@
+[options]
+mode prove
+depth 20
+
+[engines]
+smtbmc
+
+[script]
+read -formal -I. result_store.sv
+prep -top result_store
+
+[files]
+../rtl/result_store.sv
+../tb/result_store_test.svh

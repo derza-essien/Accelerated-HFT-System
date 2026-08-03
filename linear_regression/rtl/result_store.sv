@@ -42,4 +42,10 @@ module result_store #(
         end
     end
 
+    // Assertion testing
+
+    `ifdef FORMAL
+        `include "result_store_test.svh"
+    `endif
+
 endmodule
