@@ -1,0 +1,19 @@
+[options]
+mode prove
+depth 10
+
+[engines]
+smtbmc boolector
+
+[script]
+read -formal -sv -I. ata_lower_bank.sv
+
+# The production design has 17 parameters and 153 MAC lanes. A reduced
+# three-parameter instance keeps the arithmetic proof tractable while still
+# exercising diagonal and off-diagonal lower-triangle mappings.
+chparam -set NUM_PARAMS 3 -set NUM_ACC 6 -set ACC_WIDTH 64 ata_lower_bank
+prep -top ata_lower_bank
+
+[files]
+../rtl/ata_lower_bank.sv
+../tb/ata_lower_bank_test.svh

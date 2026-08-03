@@ -39,4 +39,9 @@ module ata_lower_bank #(
         end
     end
 
+    // Formal properties are kept separate from the synthesizable datapath.
+    `ifdef FORMAL
+        `include "ata_lower_bank_test.svh"
+    `endif
+
 endmodule
