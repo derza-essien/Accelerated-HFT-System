@@ -14,12 +14,7 @@ smtbmc boolector
 
 [script]
 plugin -i slang
-
-read_slang ata_lower_bank.sv \
-    --top ata_lower_bank \
-    -D FORMAL \
-    -G NUM_PARAMS=3
-
+read_slang --top ata_lower_bank -D FORMAL -G NUM_PARAMS=3 ata_lower_bank.sv
 prep -top ata_lower_bank
 
 [files]

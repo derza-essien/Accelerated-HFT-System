@@ -5,12 +5,13 @@
 // protection for 0th cycle
 logic formal_past_valid = 1'b0;
 always_ff @(posedge clk) begin
-    formal_past_valid <= 1'b1; 
-end
+    // Require reset on the first sampled clock edge.
+    // Slang does not support reading an input net from an initial block.
+    if (!formal_past_valid) begin
+        assume(rst);
+    end
 
-// so that all later assertions are only checked after the first cycle
-initial begin
-    assume(rst);
+    formal_past_valid <= 1'b1; 
 end
 
 // function to compute the formal product
