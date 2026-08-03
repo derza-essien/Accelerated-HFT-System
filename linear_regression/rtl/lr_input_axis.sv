@@ -27,6 +27,7 @@ module lr_input_axis #(
 );
 
     logic running;
+    logic [COUNT_WIDTH-1:0] expected_samples;
 
     logic [DATA_WIDTH-1:0] buffer_data;
     logic                  buffer_valid;
@@ -38,10 +39,10 @@ module lr_input_axis #(
 
     assign take_input        = s_axis_tvalid && s_axis_tready;
     assign send_output       = buffer_valid && out_ready;
-    assign taking_last_input = take_input && (accepted_counts + 1'b1 == num_samples);
+    assign taking_last_input = take_input && (accepted_counts + 1'b1 == expected_samples);
 
     assign s_axis_tready = running &&
-                           (accepted_counts < num_samples) &&
+                           (accepted_counts < expected_samples) &&
                            (!buffer_valid || out_ready);
 
     assign out_valid = buffer_valid;
@@ -51,6 +52,7 @@ module lr_input_axis #(
     always_ff @(posedge clk) begin
         if (rst || clear) begin
             running         <= 1'b0;
+            expected_samples <= '0;
             done            <= 1'b0;
             busy            <= 1'b0;
             accepted_counts <= '0;
@@ -61,10 +63,11 @@ module lr_input_axis #(
             done <= 1'b0;
 
             if (start && !busy) begin
-                accepted_counts <= '0;
-                buffer_valid    <= 1'b0;
-                buffer_data     <= '0;
-                buffer_last     <= 1'b0;
+                expected_samples <= num_samples;
+                accepted_counts  <= '0;
+                buffer_valid     <= 1'b0;
+                buffer_data      <= '0;
+                buffer_last      <= 1'b0;
 
                 if (num_samples == 0) begin
                     running <= 1'b0;
@@ -78,7 +81,7 @@ module lr_input_axis #(
                 if (send_output && !take_input) begin
                     buffer_valid <= 1'b0;
 
-                    if (!running && (accepted_counts == num_samples)) begin
+                    if (!running && (accepted_counts == expected_samples)) begin
                         busy <= 1'b0;
                         done <= 1'b1;
                     end
