@@ -101,4 +101,7 @@ module lr_input_axis #(
         end
     end
 
+`ifdef FORMAL
+    `include "lr_input_axis_test.svh"
+`endif
 endmodule
