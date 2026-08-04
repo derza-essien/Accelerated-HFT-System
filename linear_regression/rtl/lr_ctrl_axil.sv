@@ -174,4 +174,9 @@ module lr_ctrl_axil #(
         end
     end
 
+    // Formal properties are kept separate from the synthesizable interface.
+    `ifdef FORMAL
+        `include "lr_ctrl_axil_test.svh"
+    `endif
+
 endmodule

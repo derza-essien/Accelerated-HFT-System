@@ -7,6 +7,9 @@ atb_bank_cover
 atb_bank_prove
 atb_bank_temp
 failed_tests
+lr_ctrl_axil
+lr_ctrl_axil_cover
+lr_ctrl_axil_prove
 passed_tests
 result_store_temp
 sample_unpack_temp

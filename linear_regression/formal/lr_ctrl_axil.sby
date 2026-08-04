@@ -1,0 +1,22 @@
+[tasks]
+prove
+cover
+
+[options]
+prove: mode prove
+prove: depth 16
+
+cover: mode cover
+cover: depth 16
+
+[engines]
+smtbmc boolector
+
+[script]
+plugin -i slang
+read_slang --top lr_ctrl_axil -D FORMAL lr_ctrl_axil.sv
+prep -top lr_ctrl_axil
+
+[files]
+../rtl/lr_ctrl_axil.sv
+../tb/lr_ctrl_axil_test.svh
