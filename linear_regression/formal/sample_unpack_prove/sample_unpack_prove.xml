@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-08-04T12:11:09" hostname="dkeL" package="sample_unpack" id="0" name="prove" tests="18" errors="0" failures="0" time="0" skipped="0">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="PASS"/>
+</properties>
+<testcase classname="prove" name="build execution" time="0">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_10">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_13">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_16">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_19">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_22">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_25">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_28">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_31">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_34">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_37">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_4">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_40">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_43">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_46">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_49">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_52">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_7">
+</testcase>
+<testcase classname="prove" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:4.5-4.45" time="0" type="ASSERT" location="sample_unpack_test.svh:4.5-4.45" id="y_is_lsb">
+</testcase>
+<system-out>SBY 12:11:09 [sample_unpack_prove] Removing directory '/home/dke24/Accelerated-HFT-System/linear_regression/formal/sample_unpack_prove'.
+SBY 12:11:09 [sample_unpack_prove] Copy '/home/dke24/Accelerated-HFT-System/linear_regression/formal/../rtl/sample_unpack.sv' to '/home/dke24/Accelerated-HFT-System/linear_regression/formal/sample_unpack_prove/src/sample_unpack.sv'.
+SBY 12:11:09 [sample_unpack_prove] Copy '/home/dke24/Accelerated-HFT-System/linear_regression/formal/../tb/sample_unpack_test.svh' to '/home/dke24/Accelerated-HFT-System/linear_regression/formal/sample_unpack_prove/src/sample_unpack_test.svh'.
+SBY 12:11:09 [sample_unpack_prove] engine_0: smtbmc
+SBY 12:11:09 [sample_unpack_prove] base: starting process &quot;cd sample_unpack_prove/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 12:11:09 [sample_unpack_prove] base: finished (returncode=0)
+SBY 12:11:09 [sample_unpack_prove] prep: starting process &quot;cd sample_unpack_prove/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 12:11:09 [sample_unpack_prove] prep: finished (returncode=0)
+SBY 12:11:09 [sample_unpack_prove] smt2: starting process &quot;cd sample_unpack_prove/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 12:11:09 [sample_unpack_prove] smt2: finished (returncode=0)
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: starting process &quot;cd sample_unpack_prove; yosys-smtbmc --presat --unroll --noprogress -t 10  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 12:11:09 [sample_unpack_prove] engine_0.induction: starting process &quot;cd sample_unpack_prove; yosys-smtbmc --presat --unroll -i --noprogress -t 10  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Solver: yices
+SBY 12:11:09 [sample_unpack_prove] engine_0.induction: ##   0:00:00  Solver: yices
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 12:11:09 [sample_unpack_prove] engine_0.induction: ##   0:00:00  Trying induction in step 10..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 12:11:09 [sample_unpack_prove] engine_0.induction: ##   0:00:00  Temporal induction successful.
+SBY 12:11:09 [sample_unpack_prove] engine_0.induction: ##   0:00:00  Status: passed
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 12:11:09 [sample_unpack_prove] engine_0.induction: finished (returncode=0)
+SBY 12:11:09 [sample_unpack_prove] engine_0.induction: Status returned by engine for induction: pass
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 9..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 9..
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: ##   0:00:00  Status: passed
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: finished (returncode=0)
+SBY 12:11:09 [sample_unpack_prove] engine_0.basecase: Status returned by engine for basecase: pass
+SBY 12:11:09 [sample_unpack_prove] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 12:11:09 [sample_unpack_prove] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 12:11:09 [sample_unpack_prove] summary: engine_0 (smtbmc) returned pass for basecase
+SBY 12:11:09 [sample_unpack_prove] summary: engine_0 (smtbmc) returned pass for induction
+SBY 12:11:09 [sample_unpack_prove] summary: engine_0 did not produce any traces
+SBY 12:11:09 [sample_unpack_prove] summary: successful proof by k-induction.
+SBY 12:11:09 [sample_unpack_prove] DONE (PASS, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

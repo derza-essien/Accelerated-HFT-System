@@ -1,0 +1,15 @@
+[options]
+mode prove
+depth 10
+
+
+[engines]
+smtbmc
+
+[script]
+read -formal -I. sample_unpack.sv
+prep -top sample_unpack
+
+[files]
+../rtl/sample_unpack.sv
+../tb/sample_unpack_test.svh

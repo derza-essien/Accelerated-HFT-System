@@ -13,9 +13,9 @@ cover:  depth 10
 smtbmc
 
 [script]
-read -formal -I. result_store.sv
-prep -top result_store
+read -formal -I. sample_unpack.sv
+prep -top sample_unpack
 
 [files]
-../rtl/result_store.sv
-../tb/result_store_test.svh
+../rtl/sample_unpack.sv
+../tb/sample_unpack_test.svh

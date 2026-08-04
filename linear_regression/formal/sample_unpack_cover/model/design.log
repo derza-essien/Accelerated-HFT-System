@@ -1,0 +1,239 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.67+137 (git sha1 41a4b5a03-dirty, Release, Clang /usr/bin/clang++ 21.1.8)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: sample_unpack.sv
+Parsing formal SystemVerilog input from `sample_unpack.sv' to AST representation.
+Storing AST representation for module `$abstract\sample_unpack'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\sample_unpack'.
+Generating RTLIL representation for module `\sample_unpack'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \sample_unpack
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \sample_unpack
+Removing unused module `$abstract\sample_unpack'.
+Removed 1 unused modules.
+Module sample_unpack directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 18 redundant assignments.
+Promoted 18 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+2.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$51'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$48'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$45'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$42'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$39'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$36'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$33'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$30'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$27'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$24'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$21'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$18'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$15'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$12'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$9'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$6'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:10$3'.
+Creating decoders for process `\sample_unpack.$proc$sample_unpack_test.svh:3$1'.
+
+2.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+2.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$51'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$48'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$45'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$42'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$39'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$36'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$33'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$30'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$27'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$24'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$21'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$18'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$15'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$12'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$9'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$6'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:10$3'.
+Removing empty process `sample_unpack.$proc$sample_unpack_test.svh:3$1'.
+Cleaned up 0 empty switches.
+
+2.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sample_unpack.
+
+2.4. Executing FUTURE pass.
+
+2.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sample_unpack.
+
+2.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sample_unpack..
+Removed 0 unused cells and 17 unused wires.
+<suppressed ~1 debug messages>
+
+2.7. Executing CHECK pass (checking for obvious problems).
+Checking module sample_unpack...
+Found and reported 0 problems.
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sample_unpack.
+<suppressed ~18 debug messages>
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sample_unpack'.
+Computing hashes of 18 cells of `\sample_unpack'.
+Finding duplicate cells in `\sample_unpack'.
+Removed a total of 0 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \sample_unpack..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \sample_unpack.
+Performed a total of 0 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sample_unpack'.
+Computing hashes of 18 cells of `\sample_unpack'.
+Finding duplicate cells in `\sample_unpack'.
+Removed a total of 0 cells.
+
+2.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sample_unpack..
+Removed 0 unused cells and 18 unused wires.
+<suppressed ~1 debug messages>
+
+2.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sample_unpack.
+
+2.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \sample_unpack..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+2.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \sample_unpack.
+Performed a total of 0 changes.
+
+2.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sample_unpack'.
+Computing hashes of 18 cells of `\sample_unpack'.
+Finding duplicate cells in `\sample_unpack'.
+Removed a total of 0 cells.
+
+2.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sample_unpack..
+
+2.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sample_unpack.
+
+2.8.14. Finished fast OPT passes. (There is nothing left to do.)
+
+2.9. Executing WREDUCE pass (reducing word size of cells).
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sample_unpack..
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sample_unpack.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sample_unpack'.
+Computing hashes of 18 cells of `\sample_unpack'.
+Finding duplicate cells in `\sample_unpack'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sample_unpack..
+
+2.12.4. Finished fast OPT passes.
+
+2.13. Executing SORT pass.
+
+2.14. Printing statistics.
+
+=== sample_unpack ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        4 wires
+      801 wire bits
+        4 public wires
+      801 public wire bits
+        3 ports
+      800 port bits
+       18 cells
+       18   $check
+
+2.15. Executing CHECK pass (checking for obvious problems).
+Checking module sample_unpack...
+Found and reported 0 problems.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `sample_unpack'. Setting top module to sample_unpack.
+
+3.1. Analyzing design hierarchy..
+Top module:  \sample_unpack
+
+3.2. Analyzing design hierarchy..
+Top module:  \sample_unpack
+Removed 0 unused modules.
+Module sample_unpack directly or indirectly contains formal properties -> setting "keep" attribute.
+
+4. Executing jny backend.
+
+5. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: e8fa0bd9cd, time: 0.01s, user: 0.00s, system: 0.02s, MEM: 18.00 MB peak
+Yosys 0.67+137 (git sha1 41a4b5a03-dirty, Release, Clang /usr/bin/clang++ 21.1.8)
+Time spent: 21% 2x hierarchy (0 sec), 20% 5x opt_clean (0 sec), ...

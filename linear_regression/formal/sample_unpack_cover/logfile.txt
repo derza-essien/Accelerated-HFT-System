@@ -1,0 +1,21 @@
+SBY 12:11:09 [sample_unpack_prove] Removing directory '/home/dke24/Accelerated-HFT-System/linear_regression/formal/sample_unpack_prove'.
+SBY 12:11:09 [sample_unpack_cover] Removing directory '/home/dke24/Accelerated-HFT-System/linear_regression/formal/sample_unpack_cover'.
+SBY 12:11:09 [sample_unpack_cover] Copy '/home/dke24/Accelerated-HFT-System/linear_regression/formal/../rtl/sample_unpack.sv' to '/home/dke24/Accelerated-HFT-System/linear_regression/formal/sample_unpack_cover/src/sample_unpack.sv'.
+SBY 12:11:09 [sample_unpack_cover] Copy '/home/dke24/Accelerated-HFT-System/linear_regression/formal/../tb/sample_unpack_test.svh' to '/home/dke24/Accelerated-HFT-System/linear_regression/formal/sample_unpack_cover/src/sample_unpack_test.svh'.
+SBY 12:11:09 [sample_unpack_cover] engine_0: smtbmc
+SBY 12:11:09 [sample_unpack_cover] base: starting process "cd sample_unpack_cover/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 12:11:09 [sample_unpack_cover] base: finished (returncode=0)
+SBY 12:11:09 [sample_unpack_cover] prep: starting process "cd sample_unpack_cover/model; yosys -ql design_prep.log design_prep.ys"
+SBY 12:11:09 [sample_unpack_cover] prep: finished (returncode=0)
+SBY 12:11:09 [sample_unpack_cover] smt2: starting process "cd sample_unpack_cover/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 12:11:09 [sample_unpack_cover] smt2: finished (returncode=0)
+SBY 12:11:09 [sample_unpack_cover] engine_0: starting process "cd sample_unpack_cover; yosys-smtbmc --presat --unroll -c --noprogress -t 10  --append 0 --dump-vcd engine_0/trace%.vcd --dump-yw engine_0/trace%.yw --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2"
+SBY 12:11:09 [sample_unpack_cover] engine_0: ##   0:00:00  Solver: yices
+SBY 12:11:09 [sample_unpack_cover] engine_0: ##   0:00:00  Status: passed
+SBY 12:11:09 [sample_unpack_cover] engine_0: finished (returncode=0)
+SBY 12:11:09 [sample_unpack_cover] engine_0: Status returned by engine: pass
+SBY 12:11:09 [sample_unpack_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 12:11:09 [sample_unpack_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 12:11:09 [sample_unpack_cover] summary: engine_0 (smtbmc) returned pass
+SBY 12:11:09 [sample_unpack_cover] summary: engine_0 did not produce any traces
+SBY 12:11:09 [sample_unpack_cover] DONE (PASS, rc=0)

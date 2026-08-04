@@ -1,0 +1,353 @@
+{
+  "$schema": "https://raw.githubusercontent.com/YosysHQ/yosys/main/misc/jny.schema.json",
+  "generator": "Yosys 0.67+137 (git sha1 41a4b5a03-dirty, Release, Clang /usr/bin/clang++ 21.1.8)",
+  "version": "0.0.1",
+  "invocation": "write_jny -no-connections ../model/design.json ",
+  "features": ["attributes", "properties"],
+  "modules": [
+      {
+        "name": "sample_unpack",
+        "cell_sorts": [
+          {
+            "type": "$check",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "ARGS",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "TRG",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_10",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_10",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_13",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_13",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_16",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_16",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_19",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_19",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_22",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_22",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_25",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_25",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_28",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_28",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_31",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_31",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_34",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_34",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_37",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_37",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_4",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_4",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_40",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_40",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_43",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_43",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_46",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_46",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_49",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_49",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_52",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_52",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sample_unpack_test_svh_11_7",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sample_unpack_test_svh_11_7",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:11.13-11.68"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "y_is_lsb",
+                  "attributes": {
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sample_unpack_test.svh:4.5-4.45"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "hdlname": "sample_unpack",
+            "dynports": "00000000000000000000000000000001",
+            "top": "00000000000000000000000000000001",
+            "src": "sample_unpack.sv:4.1-28.10"
+        }
+      }
+  ]
+}

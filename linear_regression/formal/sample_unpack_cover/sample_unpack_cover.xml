@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-08-04T12:11:09" hostname="dkeL" package="sample_unpack" id="0" name="cover" tests="18" errors="0" failures="0" time="0" skipped="18">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="PASS"/>
+</properties>
+<testcase classname="cover" name="build execution" time="0">
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_10">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_13">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_16">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_19">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_22">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_25">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_28">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_31">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_34">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_37">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_4">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_40">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_43">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_46">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_49">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_52">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:11.13-11.68" time="0" type="ASSERT" location="sample_unpack_test.svh:11.13-11.68" id="_witness_.check_assert_sample_unpack_test_svh_11_7">
+<skipped />
+</testcase>
+<testcase classname="cover" name="Property ASSERT in sample_unpack at sample_unpack_test.svh:4.5-4.45" time="0" type="ASSERT" location="sample_unpack_test.svh:4.5-4.45" id="y_is_lsb">
+<skipped />
+</testcase>
+<system-out>SBY 12:11:09 [sample_unpack_prove] Removing directory '/home/dke24/Accelerated-HFT-System/linear_regression/formal/sample_unpack_prove'.
+SBY 12:11:09 [sample_unpack_cover] Removing directory '/home/dke24/Accelerated-HFT-System/linear_regression/formal/sample_unpack_cover'.
+SBY 12:11:09 [sample_unpack_cover] Copy '/home/dke24/Accelerated-HFT-System/linear_regression/formal/../rtl/sample_unpack.sv' to '/home/dke24/Accelerated-HFT-System/linear_regression/formal/sample_unpack_cover/src/sample_unpack.sv'.
+SBY 12:11:09 [sample_unpack_cover] Copy '/home/dke24/Accelerated-HFT-System/linear_regression/formal/../tb/sample_unpack_test.svh' to '/home/dke24/Accelerated-HFT-System/linear_regression/formal/sample_unpack_cover/src/sample_unpack_test.svh'.
+SBY 12:11:09 [sample_unpack_cover] engine_0: smtbmc
+SBY 12:11:09 [sample_unpack_cover] base: starting process &quot;cd sample_unpack_cover/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 12:11:09 [sample_unpack_cover] base: finished (returncode=0)
+SBY 12:11:09 [sample_unpack_cover] prep: starting process &quot;cd sample_unpack_cover/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 12:11:09 [sample_unpack_cover] prep: finished (returncode=0)
+SBY 12:11:09 [sample_unpack_cover] smt2: starting process &quot;cd sample_unpack_cover/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 12:11:09 [sample_unpack_cover] smt2: finished (returncode=0)
+SBY 12:11:09 [sample_unpack_cover] engine_0: starting process &quot;cd sample_unpack_cover; yosys-smtbmc --presat --unroll -c --noprogress -t 10  --append 0 --dump-vcd engine_0/trace%.vcd --dump-yw engine_0/trace%.yw --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2&quot;
+SBY 12:11:09 [sample_unpack_cover] engine_0: ##   0:00:00  Solver: yices
+SBY 12:11:09 [sample_unpack_cover] engine_0: ##   0:00:00  Status: passed
+SBY 12:11:09 [sample_unpack_cover] engine_0: finished (returncode=0)
+SBY 12:11:09 [sample_unpack_cover] engine_0: Status returned by engine: pass
+SBY 12:11:09 [sample_unpack_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 12:11:09 [sample_unpack_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 12:11:09 [sample_unpack_cover] summary: engine_0 (smtbmc) returned pass
+SBY 12:11:09 [sample_unpack_cover] summary: engine_0 did not produce any traces
+SBY 12:11:09 [sample_unpack_cover] DONE (PASS, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>
