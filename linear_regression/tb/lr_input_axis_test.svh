@@ -12,7 +12,6 @@ end
 
 // Assetion tests for combinational signals
 
-// tmp register
 
 always_comb begin
     take_input_assert:   assert(take_input == (s_axis_tvalid && s_axis_tready));
