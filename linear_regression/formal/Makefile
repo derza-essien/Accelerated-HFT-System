@@ -18,14 +18,16 @@ setup:
 
 
 $(PASS_DIR)/%.passed: $(SBY_DIR)/%.sby | setup
-	@rm -rf $(PASS_DIR)/$* $(FAIL_DIR)/$* $(PASS_DIR)/$*.passed $(FAIL_DIR)/$*.failed $(SBY_DIR)/$*_temp
+	@rm -rf $(PASS_DIR)/$* $(FAIL_DIR)/$* $(PASS_DIR)/$*.passed $(FAIL_DIR)/$*.failed $(SBY_DIR)/$*_temp_*
 	
-	@if sby -f $< -d $(SBY_DIR)/$*_temp ; then \
-		mv $(SBY_DIR)/$*_temp $(PASS_DIR)/$*; \
+	@if sby -f --prefix $(SBY_DIR)/$*_temp $< ; then \
+		mkdir -p $(PASS_DIR)/$*; \
+		mv $(SBY_DIR)/$*_temp_* $(PASS_DIR)/$*/; \
 		touch $@; \
 		echo "PASSED: $* (Logs saved to $(PASS_DIR)/$*)"; \
 	else \
-		mv $(SBY_DIR)/$*_temp $(FAIL_DIR)/$*; \
+		mkdir -p $(FAIL_DIR)/$*; \
+		mv $(SBY_DIR)/$*_temp_* $(FAIL_DIR)/$*/ 2>/dev/null || true; \
 		touch $(FAIL_DIR)/$*.failed; \
 		echo "FAILED: $* (Logs saved to $(FAIL_DIR)/$*)"; \
 		exit 1; \
@@ -34,5 +36,5 @@ $(PASS_DIR)/%.passed: $(SBY_DIR)/%.sby | setup
 # 3. Clean up the logs and directories once used
 clean:
 	@echo "Cleaning all test directories and logs..."
-	@rm -rf $(PASS_DIR) $(FAIL_DIR) *_temp
+	@rm -rf $(PASS_DIR) $(FAIL_DIR) *_temp_*
 	@echo "Workspace is clean."
