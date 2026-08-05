@@ -37,11 +37,11 @@ module matrix_mult_top #(
     output logic                                      s_axis_tready,
     input  logic                                      s_axis_tlast,
 
-    // BRAM-controller read port.
-    input  logic                                      bram_clk,
-    input  logic                                      bram_en,
-    input  logic [12:0]                               bram_addr,
-    output logic [63:0]                               bram_dout
+    // AXI4-Stream output
+    output logic [64-1:0]                               m_axis_tdata,
+    output logic                                        m_axis_tvalid,
+    output logic                                        m_axis_tready,
+    output logic                                        m_axis_tlast
 );
 
     logic rst;
@@ -65,14 +65,14 @@ module matrix_mult_top #(
     logic                  w_axis_out_ready;
 
     // Unpacked sample signals.
-    logic signed [15:0] w_x_unpacked [0:D-1];
+    logic signed [D-1:0][15:0] w_x_unpacked;
     logic signed [15:0] w_y_unpacked;
 
     // Accumulation enable.
     logic w_start_sample;
 
     // Accumulator outputs.
-    logic signed [ACC_WIDTH-1:0] w_atb_acc [0:D-1];
+    logic signed [D-1:0][ACC_WIDTH-1:0] w_atb_acc;
     logic signed [ACC_WIDTH-1:0] w_ata_acc [0:NUM_ACC-1];
 
     // Input/accumulator handshake. Sample acceptance is blocked while results dump.
@@ -183,9 +183,6 @@ module matrix_mult_top #(
 
     // Result-dump datapath.
     logic [7:0]  dump_addr;
-    logic [63:0] dump_data;
-    logic        dump_we;
-    logic [7:0]  dump_addr_ram;
 
     // Guard array indices so out-of-range branches do not become invalid selects.
     logic [7:0] safe_ata_idx;
@@ -194,14 +191,8 @@ module matrix_mult_top #(
     assign safe_atb_idx = (dump_addr < D) ? dump_addr : 8'd0;
     assign safe_ata_idx = (dump_addr >= D) ? (dump_addr - D) : 8'd0;
 
-    // Align the BRAM write address with the registered dump data.
-    always_ff @(posedge clk) begin
-        if (rst || w_clear) begin
-            dump_addr_ram <= '0;
-        end else begin
-            dump_addr_ram <= dump_addr;
-        end
-    end
+    assign m_axis_tdata =   (dump_addr < D) ? w_atb_acc[safe_atb_idx] : w_ata_acc[safe_ata_idx];
+    assign m_axis_tlast =   (dump_addr == (D + NUM_ACC - 1));
 
     typedef enum logic [1:0] {IDLE, DUMPING, DONE} state_t;
     state_t state, next_state;
@@ -223,59 +214,38 @@ module matrix_mult_top #(
         if (rst || w_clear || w_start) begin
             state       <= IDLE;
             dump_addr   <= '0;
-            dump_we     <= 1'b0;
-            dump_data   <= '0;
             is_dumping  <= 1'b0;
             w_ctrl_done <= 1'b0;
+            m_axis_tvalid   <=  1'b0;
         end else begin
             case (state)
                 IDLE: begin
-                    if (trigger_dump) begin
+                    if (axis_done_sticky) begin
                         state      <= DUMPING;
                         is_dumping <= 1'b1;
                         dump_addr  <= '0;
+                        m_axis_tvalid   <=  1'b1;
                     end
                 end
 
                 DUMPING: begin
-                    dump_we <= 1'b1;
-
-                    if (dump_addr < D) begin
-                        dump_data <= w_atb_acc[safe_atb_idx];
-                    end else begin
-                        dump_data <= w_ata_acc[safe_ata_idx];
-                    end
-
-                    if (dump_addr == (D + NUM_ACC - 1)) begin
-                        state <= DONE;
-                    end else begin
-                        dump_addr <= dump_addr + 1;
+                    if(m_axis_tready) begin
+                        if(m_axis_tlast) begin
+                            state   <=  DONE;
+                            m_axis_tvalid   <=  1'b0;
+                        end
+                        else begin
+                            dump_addr   <=  dump_addr + 1;
+                        end
                     end
                 end
 
                 DONE: begin
-                    dump_we     <= 1'b0;
                     is_dumping  <= 1'b0;
                     w_ctrl_done <= 1'b1;
                 end
             endcase
         end
     end
-
-    result_store #(
-        .DATA_WIDTH(64),
-        .ADDR_WIDTH(9)
-    ) bram_inst (
-        .clka  (clk),
-        .ena   (is_dumping),
-        .wea   (dump_we),
-        .addra (dump_addr_ram),
-        .dina  (dump_data),
-
-        .clkb  (bram_clk),
-        .enb   (bram_en),
-        .addrb (bram_addr[7:0]),
-        .doutb (bram_dout)
-    );
 
 endmodule

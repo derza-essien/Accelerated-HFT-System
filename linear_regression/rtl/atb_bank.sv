@@ -8,7 +8,7 @@ module atb_bank #(
     input  logic                          clk,
     input  logic                          rst,
     input  logic                          sample_valid,
-    input  logic signed [X_WIDTH-1:0]     x_reg [0:D-1],
+    input  logic signed [D-1:0][X_WIDTH-1:0]     x_reg,
     input  logic signed [Y_WIDTH-1:0]     y_reg,
     output logic                          valid_out,
     output logic signed [ACC_WIDTH-1:0]   atb_acc [0:D-1]

@@ -7,7 +7,7 @@ module ata_lower_bank #(
     input  logic                              clk,
     input  logic                              rst,
     input  logic                              sample_valid,
-    input  logic signed [15:0]                x [0:NUM_PARAMS-1],
+    input  logic signed [NUM_PARAMS-1:0][15:0]                x,
     output logic                              valid_out,
     output logic signed [ACC_WIDTH-1:0]       acc [0:NUM_ACC-1]
 );
