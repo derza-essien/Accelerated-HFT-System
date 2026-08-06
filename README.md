@@ -188,13 +188,13 @@ The 64-bit output stream contains 170 signed accumulator values:
 For matrix row $i$ and column $j$, where $0 \le j \le i < 17$, the lower-triangle index is:
 
 $$
-\operatorname{idx}(i,j) = \frac{i(i+1)}{2} + j
+\mathrm{idx}(i,j) = \frac{i(i+1)}{2} + j
 $$
 
 The corresponding output-stream index is:
 
 $$
-17 + \operatorname{idx}(i,j)
+17 + \mathrm{idx}(i,j)
 $$
 
 ### AXI4-Lite register map
