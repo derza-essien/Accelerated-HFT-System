@@ -143,16 +143,20 @@ Together with 17 \(A^Tb\) terms, the fully parallel architecture contains **170 
 
 ```mermaid
 flowchart LR
-    MM2S[AXI DMA MM2S\n512-bit sample beat] --> BUF[lr_input_axis\none-entry elastic buffer]
-    BUF --> PACK[sample_unpack]
-    PACK -->|x[0:16]| ATA[ata_lower_bank\n153 parallel MACs]
-    PACK -->|x[0:16], y| ATB[atb_bank\n17 parallel MACs]
-    CTRL[lr_ctrl_axil\nAXI4-Lite] --> BUF
+    MM2S["AXI DMA MM2S<br/>512-bit sample beat"] --> BUF["lr_input_axis<br/>one-entry elastic buffer"]
+    BUF --> PACK["sample_unpack"]
+
+    PACK -->|x0 through x16| ATA["ata_lower_bank<br/>153 parallel MACs"]
+    PACK -->|x0 through x16 and y| ATB["atb_bank<br/>17 parallel MACs"]
+
+    CTRL["lr_ctrl_axil<br/>AXI4-Lite"] --> BUF
     CTRL --> ATA
     CTRL --> ATB
-    ATA --> SEL[Result selector and dump FSM]
+
+    ATA --> SEL["Result selector<br/>and dump FSM"]
     ATB --> SEL
-    SEL --> S2MM[AXI DMA S2MM\n64-bit result stream]
+
+    SEL --> S2MM["AXI DMA S2MM<br/>64-bit result stream"]
 ```
 
 A batch is controlled by the configured sample count. Once started, the input stage accepts up to one complete sample beat per cycle whenever downstream logic is ready. The 170 accumulators update together on every accepted sample. After the final sample has propagated through the input buffer, the top-level dump controller serialises the 17 \(A^Tb\) values followed by the 153 lower-triangular \(A^TA\) values.
@@ -178,16 +182,20 @@ The 64-bit output stream contains 170 signed accumulator values:
 
 | Output index | Contents |
 |---:|---|
-| `0` to `16` | \(A^Tb[0]\) to \(A^Tb[16]\) |
-| `17` to `169` | Lower-triangular \(A^TA\), row-major |
+| `0` to `16` | `Aᵀb[0]` to `Aᵀb[16]` |
+| `17` to `169` | Lower-triangular `AᵀA`, row-major |
 
-For matrix row \(i\) and column \(j\), where \(0 \le j \le i < 17\), the lower-triangle index is:
+For matrix row $i$ and column $j$, where $0 \le j \le i < 17$, the lower-triangle index is:
 
-\[
+$$
 \operatorname{idx}(i,j) = \frac{i(i+1)}{2} + j
-\]
+$$
 
-The corresponding output-stream index is `17 + idx(i,j)`.
+The corresponding output-stream index is:
+
+$$
+17 + \operatorname{idx}(i,j)
+$$
 
 ### AXI4-Lite register map
 
