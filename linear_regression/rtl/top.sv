@@ -40,7 +40,7 @@ module matrix_mult_top #(
     // AXI4-Stream output
     output logic [64-1:0]                               m_axis_tdata,
     output logic                                        m_axis_tvalid,
-    output logic                                        m_axis_tready,
+    input  logic                                        m_axis_tready,
     output logic                                        m_axis_tlast
 );
 
@@ -206,9 +206,6 @@ module matrix_mult_top #(
             axis_done_sticky <= 1'b1;
         end
     end
-
-    logic trigger_dump;
-    assign trigger_dump = axis_done_sticky;
 
     always_ff @(posedge clk) begin
         if (rst || w_clear || w_start) begin
