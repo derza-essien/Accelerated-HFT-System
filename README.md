@@ -253,8 +253,6 @@ Reports are stored in [`hardware_report/`](hardware_report/).
 | Item | Latest checked-in result |
 |---|---:|
 | Vivado version | 2023.2 |
-| Target device | `xc7z020-clg400-1` |
-| Clock period | **10.000 ns** |
 | Clock frequency | **100.000 MHz** |
 | WNS | **+0.095 ns** |
 | TNS | **0.000 ns** |
