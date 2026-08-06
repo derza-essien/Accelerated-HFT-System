@@ -2,7 +2,7 @@
 
 SystemVerilog RTL, PYNQ software, and cloud coordination for a real-time cryptocurrency research platform built around an **FPGA-accelerated online linear-regression engine**.
 
-The trading node ingests live Binance market data, computes microstructure features, forms lookahead-safe training labels, and sends packed samples to a PYNQ-Z1. The programmable logic accumulates the normal-equation terms \(A^TA\) and \(A^Tb\) using 170 parallel fixed-point multiply-accumulate lanes. The Processing System completes the regression solve, generates BUY/SELL signals, and records paper-trading results. A second PYNQ node provides voice-driven asset and feature control through a shared cloud API.
+The trading node ingests live Binance market data, computes microstructure features, forms lookahead-safe training labels, and sends packed samples to a PYNQ-Z1. The programmable logic accumulates the normal-equation terms $A^T A$ and $A^T b$ using 170 parallel fixed-point multiply-accumulate lanes. The Processing System completes the regression solve, generates BUY/SELL signals, and records paper-trading results. A second PYNQ node provides voice-driven asset and feature control through a shared cloud API.
 
 ---
 
@@ -33,8 +33,8 @@ We target the **PYNQ-Z1 / Zynq-7020** using Vivado 2023.2.
 The current accelerator provides:
 
 - A 17-feature fixed-point regression datapath.
-- 153 lower-triangular \(A^TA\) accumulators.
-- 17 \(A^Tb\) accumulators.
+- 153 lower-triangular $A^T A$ accumulators.
+- 17 $A^T b$ accumulators.
 - 170 parallel 16-bit multiplier lanes.
 - A sustained accumulation initiation interval of **one accepted sample per clock cycle**.
 - A 512-bit AXI4-Stream input from DMA.
@@ -50,24 +50,24 @@ The latest routed build is timing-clean at **100 MHz** with **+0.095 ns WNS** an
 
 ```mermaid
 flowchart LR
-    subgraph MARKET[Live market-data path]
-        BIN[Binance WebSocket]
-        FEAT[Microstructure feature engine\n17 features every 200 ms]
-        LAB[Welford normalisation\nand 2 s horizon labels]
-        BATCH[Training sample buffer]
+    subgraph MARKET["Live market-data path"]
+        BIN["Binance WebSocket"]
+        FEAT["Microstructure feature engine<br/>17 features every 200 ms"]
+        LAB["Welford normalisation<br/>and 2 s horizon labels"]
+        BATCH["Training sample buffer"]
         BIN --> FEAT --> LAB --> BATCH
     end
 
-    subgraph PYNQ2[PYNQ-Z1 trading node]
-        PS[ARM Processing System]
-        DMA[AXI DMA\n512-bit MM2S / 64-bit S2MM]
+    subgraph PYNQ2["PYNQ-Z1 trading node"]
+        PS["ARM Processing System"]
+        DMA["AXI DMA<br/>512-bit MM2S / 64-bit S2MM"]
 
-        subgraph PL[Programmable Logic]
-            AXIS[AXI4-Stream input buffer]
-            UNPACK[Sample unpack]
-            ATA[153-lane lower-triangular AᵀA bank]
-            ATB[17-lane Aᵀb bank]
-            DUMP[170-word result dump]
+        subgraph PL["Programmable Logic"]
+            AXIS["AXI4-Stream input buffer"]
+            UNPACK["Sample unpack"]
+            ATA["153-lane lower-triangular AᵀA bank"]
+            ATB["17-lane Aᵀb bank"]
+            DUMP["170-word result dump"]
 
             AXIS --> UNPACK
             UNPACK --> ATA
@@ -80,22 +80,22 @@ flowchart LR
         DUMP --> DMA --> PS
     end
 
-    subgraph EXEC[Model and execution]
-        SOLVE[PS coefficient solve]
-        PRED[Return prediction]
-        PAPER[Paper-trading engine]
+    subgraph EXEC["Model and execution"]
+        SOLVE["PS coefficient solve"]
+        PRED["Return prediction"]
+        PAPER["Paper-trading engine"]
         SOLVE --> PRED --> PAPER
     end
 
-    subgraph CLOUD[AWS coordination node]
-        API[Flask REST API + SQLite]
-        DASH[Portfolio and model dashboard]
+    subgraph CLOUD["AWS coordination node"]
+        API["Flask REST API + SQLite"]
+        DASH["Portfolio and model dashboard"]
         API --> DASH
     end
 
-    subgraph PYNQ1[PYNQ-Z1 controller node]
-        MIC[PDM microphone and audio PL]
-        VOICE[Speech and command processing]
+    subgraph PYNQ1["PYNQ-Z1 controller node"]
+        MIC["PDM microphone and audio PL"]
+        VOICE["Speech and command processing"]
         MIC --> VOICE
     end
 
@@ -104,38 +104,38 @@ flowchart LR
     PAPER --> API
     SOLVE --> API
     VOICE --> API
-    API -. asset and feature instructions .-> PS
+    API -.->|asset and feature instructions| PS
 ```
 
 ---
 
 ## Why online linear regression
 
-For a design matrix \(A \in \mathbb{R}^{n \times d}\) and target vector \(b\), least-squares regression can be expressed through the normal equations:
+For a design matrix $A \in \mathbb{R}^{n \times d}$ and target vector $b$, least-squares regression can be expressed through the normal equations:
 
-\[
-\hat{w} = (A^TA)^{-1}A^Tb
-\]
+$$
+\hat{w} = (A^T A)^{-1} A^T b
+$$
 
-Appending one feature row \(x\) with target \(y\) does not require recomputing the matrix products over the full history:
+Appending one feature row $x$ with target $y$ does not require recomputing the matrix products over the full history:
 
-\[
-A'^TA' = A^TA + x^Tx
-\]
+$$
+A'^T A' = A^T A + x^T x
+$$
 
-\[
-A'^Tb' = A^Tb + x^Ty
-\]
+$$
+A'^T b' = A^T b + x^T y
+$$
 
 The expensive repeated work is therefore a rank-one outer-product update. This maps naturally to a bank of parallel FPGA multiply-accumulate lanes and allows the design to retain historical sufficient statistics without storing every prior sample in PL memory.
 
-For \(d=17\), only the lower triangle of the symmetric \(A^TA\) matrix is stored:
+For $d=17$, only the lower triangle of the symmetric $A^T A$ matrix is stored:
 
-\[
+$$
 \frac{17(17+1)}{2} = 153 \text{ terms}
-\]
+$$
 
-Together with 17 \(A^Tb\) terms, the fully parallel architecture contains **170 accumulator lanes**.
+Together with 17 $A^T b$ terms, the fully parallel architecture contains **170 accumulator lanes**.
 
 ---
 
@@ -159,7 +159,7 @@ flowchart LR
     SEL --> S2MM["AXI DMA S2MM<br/>64-bit result stream"]
 ```
 
-A batch is controlled by the configured sample count. Once started, the input stage accepts up to one complete sample beat per cycle whenever downstream logic is ready. The 170 accumulators update together on every accepted sample. After the final sample has propagated through the input buffer, the top-level dump controller serialises the 17 \(A^Tb\) values followed by the 153 lower-triangular \(A^TA\) values.
+A batch is controlled by the configured sample count. Once started, the input stage accepts up to one complete sample beat per cycle whenever downstream logic is ready. The 170 accumulators update together on every accepted sample. After the final sample has propagated through the input buffer, the top-level dump controller serialises the 17 $A^T b$ values followed by the 153 lower-triangular $A^T A$ values.
 
 ### Sample format
 
